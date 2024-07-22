@@ -13,6 +13,18 @@ services:
       - ./src:/usr/src/app/src
     networks:
       - dev-network
-
+  postgres_db:
+    image: postgres
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=apidatabase
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - dev-network
+      
 networks:
   dev-network:
