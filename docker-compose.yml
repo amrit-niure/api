@@ -23,10 +23,10 @@ services:
     restart: always
     ports:
       - '5432:5432'
-    env_file:
+    environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=docker-postgres     
+      - POSTGRES_DB=pratikshya     
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
